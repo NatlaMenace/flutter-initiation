@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "756303312784",
+    "project_id": "initiation-pro",
+    "storage_bucket": "initiation-pro.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756303312784:android:ada3e885eba6f00645a515",
+        "android_client_info": {
+          "package_name": "com.initiationproject.APP"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFkZe9P9eqp9DN7Z83a3RFRsAv4BreQ1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
