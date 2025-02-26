@@ -25,4 +25,9 @@ class FirebaseService {
   Future<void> deleteDocument(String collection, String id) async {
     await _firestore.collection(collection).doc(id).delete();
   }
+
+  // Listen to a specified collection in Firestore
+  Stream<QuerySnapshot<Map<String, dynamic>>> listenToCollection(String collection) {
+    return _firestore.collection(collection).snapshots();
+  }
 }
