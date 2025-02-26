@@ -11,17 +11,14 @@ class ShopPage extends StatefulWidget {
 }
 
 class _ShopPageState extends State<ShopPage> {
-  final items = ItemProvider().itemsShop;
-
   @override
   Widget build(BuildContext context) {
     return Consumer<ItemProvider>(
       builder: (context, itemProvider, child) {
-        final items = itemProvider.itemsShop;
         return ListView.builder(
-          itemCount: items.length,
+          itemCount: itemProvider.itemsShop.length,
           itemBuilder: (context, index) {
-            final item = items[index];
+            final item = itemProvider.itemsShop[index];
             return ListTile(
               leading: Icon(itemProvider.getCategoryIcon(item.category)),
               title: Text(item.name, style: labelTextStyle),

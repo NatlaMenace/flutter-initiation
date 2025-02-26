@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:initiation_project/services/location_service.dart';
 import 'package:initiation_project/services/weather_service.dart';
 import 'package:initiation_project/themes/text_style.dart';
 
@@ -14,22 +15,23 @@ class _MorePageState extends State<MorePage> {
   final WeatherService weatherService = WeatherService();
   Map<String, dynamic>? weatherData;
   double? exchangeRate;
-  final city = 'Limoges';
+  String city = 'Unknown';
 
   @override
   void initState() {
     super.initState();
-    fetchWeather();
+    fetchInformations();
   }
 
-  Future<void> fetchWeather() async {
+  Future<void> fetchInformations() async {
     try {
+      city = await LocationService().getCity();
       final data = await weatherService.fetchWeatherData(city);
       setState(() {
         weatherData = data;
       });
     } catch (e) {
-      print("Error fetching weather data: $e");
+      debugPrint("Error fetching information: $e");
     }
   }
 

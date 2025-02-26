@@ -105,7 +105,7 @@ class _CreatePageState extends State<CreatePage> {
                   child: ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        context.read<ItemProvider>().addItem(
+                        context.read<ItemProvider>().addItemToShop(
                               Item(
                                   name: nameController.text,
                                   price: double.parse(priceController.text),
